@@ -47,8 +47,10 @@ public class Application {
             Hasher rendezvousHasherUpdated = new RendezvousHashingRouter(new ShiftMultHasher(), 100 - i);
 
             System.out.printf("================ Remove %d nodes ================\n", i);
-            System.out.printf("Consistent hashing: %f%%\n", 100 * estimator.diff(consistentHasher, consistentHasherUpdated, seq(1_000_000)));
-            System.out.printf("Rendezvous hashing: %f%%\n", 100 * estimator.diff(rendezvousHasher, rendezvousHasherUpdated, seq(1_000_000)));
+            System.out.printf("Consistent hashing: %f%%\n",
+                100 * estimator.diff(consistentHasher, consistentHasherUpdated, seq(1_000_000)));
+            System.out.printf("Rendezvous hashing: %f%%\n",
+                100 * estimator.diff(rendezvousHasher, rendezvousHasherUpdated, seq(1_000_000)));
         }
     }
 }
